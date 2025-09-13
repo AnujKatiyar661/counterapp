@@ -1,69 +1,49 @@
-const API_KEY = "200cbb7a08934c3fb63a8afe93a19dcc";
-const url = "https://newsapi.org/v2/everything?q=";
+function unlocked() {
+  console.log("function Called");
+  let title = document.getElementById('Heading'); // match the exact ID
+  let btn =document.getElementById('btn');
+  title.innerText = 'Congratulations! Now you can start learning.';
 
-window.addEventListener("load", () => fetchNews("India"));
-
-function reload() {
-    window.location.reload();
+    btn.style.display = 'none';
 }
 
-async function fetchNews(query) {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-    const data = await res.json();
-    bindData(data.articles);
+function welcome(){
+    let studentName = document.getElementById('name');
+    let nameSpan = document.getElementById('nameSpan');
+
+    nameSpan.innerText = studentName.value;
+    studentName.value= ""
 }
 
-function bindData(articles) {
-    const cardsContainer = document.getElementById("cards-container");
-    const newsCardTemplate = document.getElementById("template-news-card");
+function split(){
+  let amount = document.getElementById('amount');
+  let person = document.getElementById('person');
 
-    cardsContainer.innerHTML = "";
+  let result = (amount.value /person.value).toFixed(2);
+  let resultDiv = document.getElementById('result')
+  resultDiv.innerText = result
 
-    articles.forEach((article) => {
-        if (!article.urlToImage) return;
-        const cardClone = newsCardTemplate.content.cloneNode(true);
-        fillDataInCard(cardClone, article);
-        cardsContainer.appendChild(cardClone);
-    });
+}
+let counter = 0;
+ function increment(){
+ counter= counter+1;
+ let counterResult= document.getElementById('counterResult');
+ counterResult.innerText = counter
+}
+function decrement(){
+counter = counter-1;
+let counterResult =document.getElementById('counterResult');
+counterResult.innerText = counter
 }
 
-function fillDataInCard(cardClone, article) {
-    const newsImg = cardClone.querySelector("#news-img");
-    const newsTitle = cardClone.querySelector("#news-title");
-    const newsSource = cardClone.querySelector("#news-source");
-    const newsDesc = cardClone.querySelector("#news-desc");
 
-    newsImg.src = article.urlToImage;
-    newsTitle.innerHTML = article.title;
-    newsDesc.innerHTML = article.description;
 
-    const date = new Date(article.publishedAt).toLocaleString("en-US", {
-        timeZone: "Asia/Jakarta",
-    });
 
-    newsSource.innerHTML = `${article.source.name} · ${date}`;
 
-    cardClone.firstElementChild.addEventListener("click", () => {
-        window.open(article.url, "_blank");
-    });
-}
 
-let curSelectedNav = null;
-function onNavItemClick(id) {
-    fetchNews(id);
-    const navItem = document.getElementById(id);
-    curSelectedNav?.classList.remove("active");
-    curSelectedNav = navItem;
-    curSelectedNav.classList.add("active");
-}
 
-const searchButton = document.getElementById("search-button");
-const searchText = document.getElementById("search-text");
 
-searchButton.addEventListener("click", () => {
-    const query = searchText.value;
-    if (!query) return;
-    fetchNews(query);
-    curSelectedNav?.classList.remove("active");
-    curSelectedNav = null;
-});
+
+
+
+

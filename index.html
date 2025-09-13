@@ -1,57 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katiyar News App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
+  <!-- <div class="w-[400px] mx-auto mt-36">
+        <h1 id="heading" class="text-2xl font-bold">Welcome to the Javasctript Bootcamp! <span id="nameSpan"></span> </h1>
+        
+        <input type="text"  id="name" placeholder="Enter Name" class="w-full py-3 border border-neutral-300 px-3 mt-2  rounded-xl focus:border-violet-300 focus:outline-none focus:ring-4 focus:ring-violet-200 transition">
+        <button id="btn" onclick="welcome()" class="bg-black text-white px-4 py-3 rounded-xl mt-2">Submit Name</button>
+    </div>  -->
+      <!-- <div class="w-[400px] mx-auto mt-36 text-centere">
+     <h1 class="text-4xl mb-4 font-bold" id ="result"> 🍿🚘⛱️</h1>
+     <h1 id="heading" class="text-2xl font-bold">Split the Bill Yours Friends !</h1>
+     <p class="mb-3 text-natural-600"> are You a good person.</p>
+
+     <div class="flex gap-3">
+      <input type="text" id="amount"  placeholder="Enter amount" class="w-full py-3 border border-neutral-300 px-3 mt-2 rounded-xl focus:border-violet-300 focus:outline-none focus:ring-4 focus:ring-violet-200 transition">
+      <input type="text" id='person' placeholder="Enter Persons" class="w-full py-3 border border-neutral-300 px-3 mt-2 rounded-xl focus:border-neutral-300 focus:outline-none focus:ring-4 focus:ring-violet-200 transition">
+      
+      <button id="btn" onclick="split()" class="bg-black w-full text-white px-4 py-4 rounded-xl mt-2"> Split the Bill</button>
+
+   </div>  -->
+     
+
+    <div class="w-[400px] mx-auto mt-36 text-center">
+        <h1 id="counterResult" class="text-6xl font-black">0 </h1>
+        <h1  class="text-2xl font-bold">Basic Java script Counter App  </h1>
+        
+        
+        <button id="btn" onclick="increment()" class="bg-black text-white px-4 py-3 rounded-xl mt-2">Increment Button</button>
+         <button id="btn" onclick="decrement()" class="bg-black text-white px-4 py-3 rounded-xl mt-2">Decriment Button</button>
+    </div> 
+
+
     
 
-    <nav>
-        <div class="main-nav container flex">
-            <a href="#" onclick="reload()" class="company-logo">
-                <img src="logo.png" alt="company logo">
-            </a>
-            <div class="nav-links">
-                <ul class="flex">
-                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
-                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
-                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
-                </ul>
-            </div>
-            <div class="search-bar flex">
-                <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
-                <button id="search-button" class="search-button">Search</button>
-            </div>
-        </div>
-    </nav>
-
-
-    <main>
-        <div class="cards-container container flex" id="cards-container">
-            
-        </div>
-    </main>
-
-    <template id="template-news-card">
-        <div class="card">
-            <div class="card-header">
-                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
-            </div>
-            <div class="card-content">
-                <h3 id="news-title">This is the Title</h3>
-                <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
-                <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
-            </div>
-        </div>
-    </template>
 
 
 
 
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
